@@ -1,0 +1,32 @@
+{
+  "name": "Aida",
+  "url": "http://labtheme.com",
+  "version": "0.1.0",
+  "description": "Responsive Multipurpose Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "responsive",
+    "multipurpose",
+    "landing",
+    "page"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://test@bitbucket.org/test/aida.git"
+  },
+  "author": "Labrin",
+  "authorUrl": "http://labtheme.com",
+  "license": "ISC",
+  "devDependencies": {
+    "cssmin": "^0.4.3",
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
