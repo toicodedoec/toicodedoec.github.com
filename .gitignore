@@ -9,4 +9,13 @@ Thumbs.db
 .rbenv-version
 .rvmrc
 
+Gemfile.lock
+github
+github.pub
+package-lock.json
+
+node_modules/*
+
+auto-body/.sass-cache/
+auto-body/package-lock.json
 auto-body/node_modules/*
