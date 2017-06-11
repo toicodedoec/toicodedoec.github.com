@@ -4,60 +4,13 @@
  * @author Labrin
  * @author-url http://labtheme.com
  * @version 0.1.0
- * @updated 2017-06-10 */
-
-/*!
- * Aida
- * http://labtheme.com
- * @author Labrin
- * @author-url http://labtheme.com
- * @version 0.1.0
- * @updated 2017-06-10 */
-
-/*!
- * Aida
- * http://labtheme.com
- * @author Labrin
- * @author-url http://labtheme.com
- * @version 0.1.0
- * @updated 2017-06-10 */
-
-/*!
- * Aida
- * http://labtheme.com
- * @author Labrin
- * @author-url http://labtheme.com
- * @version 0.1.0
- * @updated 2017-06-10 */
-
-/*!
- * Aida
- * http://labtheme.com
- * @author Labrin
- * @author-url http://labtheme.com
- * @version 0.1.0
- * @updated 2017-06-10 */
-
-/*!
- * Aida
- * http://labtheme.com
- * @author Labrin
- * @author-url http://labtheme.com
- * @version 0.1.0
- * @updated 2017-06-10 */
-
-/*!
- * Aida
- * http://labtheme.com
- * @author Labrin
- * @author-url http://labtheme.com
- * @version 0.1.0
- * @updated 2017-06-10 */
+ * @updated 2017-06-11 */
 
 /*  Imported styles
 ----------------------------------------------------*/
 @import url(icons/foundation-icons.css);
-@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic);
 meta.foundation-version {
   font-family: "/{{VERSION}}/";
 }
@@ -1494,7 +1447,7 @@ select {
   background: #EFEFEF;
   color: #222222;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-size: 1rem;
   padding: 1rem;
 }
@@ -2065,7 +2018,7 @@ button, .button {
   border-style: solid;
   border-width: 0;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -4362,7 +4315,7 @@ kbd {
 
 .label {
   display: inline-block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-weight: normal;
   line-height: 1;
   margin-bottom: auto;
@@ -4839,7 +4792,7 @@ ul.pagination li {
 .pricing-table .title {
   background-color: #333333;
   color: #EEEEEE;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-size: 1rem;
   font-weight: normal;
   padding: 0.9375rem 1.25rem;
@@ -4848,7 +4801,7 @@ ul.pagination li {
 .pricing-table .price {
   background-color: #F6F6F6;
   color: #333333;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-size: 2rem;
   font-weight: normal;
   padding: 0.9375rem 1.25rem;
@@ -5189,7 +5142,7 @@ ul.pagination li {
 
 .side-nav {
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   list-style-position: outside;
   list-style-type: none;
   margin: 0;
@@ -5215,7 +5168,7 @@ ul.pagination li {
 }
 .side-nav li.active > a:first-child:not(.button) {
   color: #1cc7ff;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-weight: normal;
 }
 .side-nav li.divider {
@@ -5368,7 +5321,7 @@ ul.pagination li {
 .sub-nav li {
   color: #999999;
   float: left;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-size: 0.875rem;
   font-weight: normal;
   margin-left: 1rem;
@@ -5606,7 +5559,7 @@ table tr td {
   display: block;
   background-color: #EFEFEF;
   color: #222222;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-size: 1rem;
   padding: 1rem 2rem;
 }
@@ -5991,7 +5944,7 @@ meta.foundation-mq-topbar {
 .top-bar-section ul li > a {
   color: #FFFFFF;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-size: 0.8125rem;
   font-weight: normal;
   padding-left: 0.9375rem;
@@ -6712,7 +6665,7 @@ p aside {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   color: #222222;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-style: normal;
   font-weight: normal;
   line-height: 1.4;
@@ -6790,7 +6743,7 @@ code {
   border-style: solid;
   border-width: 1px;
   color: #333333;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-family: Lato;
   font-weight: normal;
   padding: 0.125rem 0.3125rem 0.0625rem;
 }
@@ -8391,7 +8344,7 @@ th.hide-for-touch {
 ----------------------------------------------------*/
 .ht,
 .font-dosis {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /*  header
@@ -8405,7 +8358,7 @@ header.head .logo .slogan {
   margin: 10px 0 0;
   text-align: center;
   color: #666;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 14px;
 }
 header.head .lg {
@@ -8436,7 +8389,7 @@ header.head .phone .number {
 }
 @media (min-width: 64.063em) {
   header.head .phone.large-4 {
-    width: 28%;
+    width: 29%;
     padding-right: 0;
   }
 }
@@ -9230,5 +9183,97 @@ ul.social-list li a.social-youtube:hover {
 @media (min-width: 64.063em) {
   .social-list {
     float: right;
+  }
+}
+/* ===========================
+--- Intro
+============================ */
+.intro {
+  width: 100%;
+  position: relative;
+}
+
+#intro {
+  background-image: url(../img/img-bg.jpg);
+  background-size: cover;
+}
+
+.intro .slogan {
+  padding: 250px 0 60px;
+  text-align: center;
+}
+
+.intro .slogan h1 {
+  color: #fff;
+  line-height: 1.1em;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+.intro .slogan p {
+  color: #eee;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.brand-heading {
+  font-size: 40px;
+}
+
+.intro-text {
+  font-size: 18px;
+}
+
+/* slider */
+.tp-caption.custom_large_white {
+  color: #FFF;
+  text-shadow: none;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+  background-color: transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-width: 0px;
+  border-color: #000;
+  border-style: none;
+}
+
+.tp-caption a.btn {
+  color: #fff;
+}
+
+/* Media queries */
+@media (min-width: 767px) {
+  .intro {
+    height: 100%;
+    padding: 0;
+  }
+
+  .brand-heading {
+    font-size: 100px;
+  }
+
+  .intro-text {
+    font-size: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .team.boxed-grey {
+    margin-bottom: 30px;
+  }
+
+  .boxed-grey {
+    margin-bottom: 30px;
+  }
+
+  .intro .slogan {
+    padding: 100px 0 60px;
+  }
+}
+@media (max-width: 480px) {
+  .intro .slogan {
+    padding: 170px 0 60px;
   }
 }

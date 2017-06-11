@@ -1,87 +1,54 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aida Landing page</title>
-      <link rel="stylesheet" href="css/design.min.css" />
-      <script src="js/build/jquery-1.11.0.min.js"></script>
-      <script src="js/build/script.min.js"></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/design.min.css" />
+    <script src="js/build/jquery-1.11.0.min.js"></script>
+    <script src="js/build/script.min.js"></script>
 
+    <style scoped>
+        @media (max-width: 767px) {
+            .on-the-fly-behavior {
+                text-align: center !important;
+            }
+            .none-display-call-us {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
 
     <header class="row head">
-      <div class="logo small-12 medium-3 large-2 column small-text-center">
-          <img class="lg" src="" data-interchange="[img/aida.png, (default)], [img/aida@2x.png, (retina)]" />
-          <span class="slogan">Premium Landing Page</span>
-      </div>
-      <!-- /.logo left -->
-      <div class="phone small-12 medium-5 large-4 column text-right">
-          <span class="fi-telephone phone-icon left model-round"></span>
-          <h4 class="number">
-              <small class="callus ht">CALL US:</small>
-              555-555-555
-          </h4>
-      </div>
-      <!-- /.phone right -->
-  </header>
-
-    <section class="focuspoint section">
-        <h1 class="title ht text-center">Welcome to Aida the best newsletter list builder</h1>
-        <h5 class="subtitle text-center">Watch the video now and learn more about our awesome services!</h5>
-        <div class="row">
-            <div class="small-12 medium-7 large-8 columns">
-                <ul class="example-orbit" data-orbit>
-                    <li><img src="content/pic-1.jpg" alt="slide 1"/>
-
-                        <div class="orbit-caption"> Caption One.</div>
-                    </li>
-                    <li><img src="content/pic-2.jpg" alt="slide 2"/>
-
-                        <div class="orbit-caption"> Caption Two.</div>
-                    </li>
-                    <li><img src="content/pic-3.jpg" alt="slide 3"/>
-
-                        <div class="orbit-caption"> Caption Three.</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="small-12 medium-5 large-4 columns">
-                <div class="subscribe-box">
-                    <form data-abide>
-                        <div class="row">
-                            <div class="large-12 columns"><p>Subscribe to our newsletter now and get exclusive deals you wont find anywhere else straight to your inbox! Sign in and get your free product download instantly after you has confirmed your Email.</p></div>
-                        </div>
-                        <div class="row iconic-row">
-                            <div class="large-12 columns">
-                                <span class="fi-torsos-male-female icon"></span>
-                                <input type="text" placeholder="Your Name" class="specinp-underline" required pattern="[a-zA-Z]+" />
-                                <small class="error">Error message!</small>
-                            </div>
-                        </div>
-                        <div class="row iconic-row">
-                            <span class="icon fi-mail"></span>
-                            <div class="large-12 columns">
-                                <input  type="email" required placeholder="Your Email" class="specinp-underline"/>
-                                <small class="error">Error message!</small>
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="row">
-                            <div class="large-12 columns"><button type="submit" class="button dark radius large-12 expand">Download now!</button></div>
-                        </div>
-                        <div class="row">
-                            <div class="large-12 columns mail-notify">
-                                <i class="icon-bordered model-round fi-mail"></i>
-                                <p>* We will not forward your email address to any third party.</p>
-                            </div>
-                        </div>
-                    </form>
-                </div><!-- /.subscribe-box -->
+        <div class="logo small-12 medium-3 large-2 column small-text-center">
+            <img class="lg" src="" data-interchange="[img/aida.png, (default)], [img/aida@2x.png, (retina)]" />
+            <span class="slogan">Premium Landing Page</span>
+        </div>
+        <!-- /.logo left -->
+        <div class="phone small-12 medium-5 large-4 column text-right on-the-fly-behavior">
+            <div style="display: inline-block">
+                <span class="fi-telephone phone-icon left model-round"></span>
+                <h4 class="number">
+                    <small class="callus ht none-display-call-us">CALL US:</small> 555-555-555
+                </h4>
             </div>
         </div>
-    </section><!-- /.focuspoint -->
+        <!-- /.phone right -->
+    </header>
+
+    <!-- Section: intro -->
+    <section id="intro" class="section intro">
+        <div class="slogan">
+            <h1>This is Ninestars</h1>
+            <p>make awesome stuff with Bootstrap framework</p>
+            <a href="#about" class="btn btn-skin scroll">Learn more</a>
+        </div>
+    </section>
+    <!-- /Section: intro -->
 
     <section class="services row section" data-equalizer>
         <h2 class="stnd-title text-center ht">
@@ -125,7 +92,8 @@
             </div>
             <!-- /.description -->
         </div>
-    </section><!-- /.services -->
+    </section>
+    <!-- /.services -->
 
     <section class="grey-zone section">
         <section class="services">
@@ -152,8 +120,10 @@
                 <!-- /.large-4 columns -->
             </div>
             <!-- /.row -->
-        </section><!-- /.services -->
-    </section><!-- /.section -->
+        </section>
+        <!-- /.services -->
+    </section>
+    <!-- /.section -->
 
     <section class="section row faq">
         <h2 class="stnd-title text-center ht">
@@ -166,19 +136,24 @@
                 <dd class="active">
                     <a href="#panel1b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
                     <div id="panel1b" class="content active">
-                        Panel 1. Lorem ipsum dolor sit amet, <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">consectetur</span> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Panel 1. Lorem ipsum dolor sit amet, <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">consectetur</span>                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
                 </dd>
                 <dd>
                     <a href="#panel2b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
                     <div id="panel2b" class="content">
-                        Panel 2. Lorem ipsum dolor sit amet, consectetur <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">adipisicing</span> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Panel 2. Lorem ipsum dolor sit amet, consectetur
+                        <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">adipisicing</span>                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
                 </dd>
                 <dd>
                     <a href="#panel3b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
                     <div id="panel3b" class="content">
-                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
                     </div>
                 </dd>
             </dl>
@@ -188,24 +163,31 @@
                 <dd>
                     <a href="#panel4b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
                     <div id="panel4b" class="content">
-                        Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">eiusmod</span> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                        <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">eiusmod</span>                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
                 </dd>
                 <dd>
                     <a href="#panel5b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
                     <div id="panel5b" class="content">
-                        Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
                     </div>
                 </dd>
                 <dd>
                     <a href="#panel6b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
                     <div id="panel6b" class="content">
-                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
                     </div>
                 </dd>
             </dl>
         </div>
-    </section><!-- /.section -->
+    </section>
+    <!-- /.section -->
 
     <section class="grey-zone section">
         <h2 class="stnd-title text-center ht">
@@ -217,9 +199,15 @@
             <div class="small-12 large-3 medium-3 columns text-center member">
                 <img data-interchange="[content/team-4.jpg, (default)], [content/team-4@2x.jpg, (retina)]" class="photo model-round">
                 <ul class="button-group social-accounts round center-block">
-                    <li><a href="#" class="button tiny fi-social-facebook secondary"></a></li>
-                    <li><a href="#" class="button tiny fi-social-twitter secondary"></a></li>
-                    <li><a href="#" class="button tiny fi-social-google-plus secondary"></a></li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-facebook secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-twitter secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-google-plus secondary"></a>
+                    </li>
                 </ul>
                 <div class="about">
                     <h6>
@@ -232,9 +220,15 @@
             <div class="small-12 large-3 medium-3 columns text-center member">
                 <img data-interchange="[content/team-1.jpg, (default)], [content/team-1@2x.jpg, (retina)]" class="photo model-round">
                 <ul class="button-group social-accounts round center-block">
-                    <li><a href="#" class="button tiny fi-social-facebook secondary"></a></li>
-                    <li><a href="#" class="button tiny fi-social-twitter secondary"></a></li>
-                    <li><a href="#" class="button tiny fi-social-google-plus secondary"></a></li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-facebook secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-twitter secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-google-plus secondary"></a>
+                    </li>
                 </ul>
                 <div class="about">
                     <h6>
@@ -247,9 +241,15 @@
             <div class="small-12 large-3 medium-3 columns text-center member">
                 <img data-interchange="[content/team-3.jpg, (default)], [content/team-3@2x.jpg, (retina)]" class="photo model-round">
                 <ul class="button-group social-accounts round center-block">
-                    <li><a href="#" class="button tiny fi-social-facebook secondary"></a></li>
-                    <li><a href="#" class="button tiny fi-social-twitter secondary"></a></li>
-                    <li><a href="#" class="button tiny fi-social-google-plus secondary"></a></li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-facebook secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-twitter secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-google-plus secondary"></a>
+                    </li>
                 </ul>
                 <div class="about">
                     <h6>
@@ -262,9 +262,15 @@
             <div class="small-12 large-3 medium-3 columns text-center member">
                 <img data-interchange="[content/team-5.jpg, (default)], [content/team-5@2x.jpg, (retina)]" class="photo model-round">
                 <ul class="button-group social-accounts round center-block">
-                    <li><a href="#" class="button tiny fi-social-facebook secondary"></a></li>
-                    <li><a href="#" class="button tiny fi-social-twitter secondary"></a></li>
-                    <li><a href="#" class="button tiny fi-social-google-plus secondary"></a></li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-facebook secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-twitter secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-google-plus secondary"></a>
+                    </li>
                 </ul>
                 <div class="about">
                     <h6>
@@ -276,7 +282,8 @@
             <!-- /.small-12 large-3 medium-6 columns text-center -->
         </div>
         <!-- /.row -->
-    </section><!-- /.section row -->
+    </section>
+    <!-- /.section row -->
 
     <section class="section price">
         <h2 class="stnd-title text-center ht">
@@ -335,7 +342,8 @@
             </div>
             <!-- /.large-3 small-12 medium-6 -->
         </div>
-    </section><!-- /.section row -->
+    </section>
+    <!-- /.section row -->
 
     <section class="gray-zone section">
         <h2 class="stnd-title text-center ht">
@@ -349,8 +357,7 @@
                         <span class="fi-quote icon"></span>
                         <blockquote class="nb">
                             This is a great product. I got it a while ago and i couldn’t be happier with my choice.
-                            <br/>
-                            It’s definitely a good investment if you work in my field.
+                            <br/> It’s definitely a good investment if you work in my field.
                             <cite>Isaac Asimov (CEO Great Company)</cite>
                         </blockquote>
                     </div>
@@ -368,14 +375,16 @@
                     <div class="text-center quotes">
                         <span class="fi-quote icon"></span>
                         <blockquote class="nb">
-                            Suspendisse cursus risus laoreet turpis auctor, pharetra massa varius. Suspendisse dignissim sollicitudin aliquam. Nullam vehicula pharetra ultrices sapien gravida
+                            Suspendisse cursus risus laoreet turpis auctor, pharetra massa varius. Suspendisse dignissim sollicitudin aliquam. Nullam
+                            vehicula pharetra ultrices sapien gravida
                             <cite>Isaac Asimov (Manager)</cite>
                         </blockquote>
                     </div>
                 </li>
             </ul>
         </div>
-    </section><!-- /.section -->
+    </section>
+    <!-- /.section -->
 
     <section class="blue-zone subscribe">
         <div class="row">
@@ -397,7 +406,8 @@
                 </form>
             </div>
         </div>
-    </section><!-- /.blue-zone -->
+    </section>
+    <!-- /.blue-zone -->
 
     <footer class="foot grey-zone">
         <div class="row">
@@ -417,10 +427,12 @@
             <!-- /.large-6 columns -->
         </div>
         <!-- /.row -->
-    </footer><!-- /.foot -->
+    </footer>
+    <!-- /.foot -->
 
     <script>
-      $(document).foundation();
+        $(document).foundation();
     </script>
-  </body>
+</body>
+
 </html>

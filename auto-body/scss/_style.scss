@@ -8,8 +8,8 @@
 /*  Imported styles
 ----------------------------------------------------*/
 @import url(icons/foundation-icons.css);
-// @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-@import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic);
 
 /*---------------------------------------------------
   Global Helper classes
@@ -92,7 +92,7 @@
 ----------------------------------------------------*/
 .ht,
 .font-dosis {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /*  header
@@ -110,7 +110,7 @@ header {
         margin: 10px 0 0;
         text-align: center;
         color: $black-lighter;
-        font-family: 'Lato', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         line-height: 14px;
       }
     }
@@ -144,7 +144,7 @@ header {
       @include breakpoint(64.063em) {
 
         &.large-4 {
-          width: 28%;
+          width: 29%;
           padding-right: 0;
         }
       }
