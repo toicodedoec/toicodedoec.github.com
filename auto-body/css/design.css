@@ -4,12 +4,60 @@
  * @author Labrin
  * @author-url http://labtheme.com
  * @version 0.1.0
- * @updated 2015-07-03 */
+ * @updated 2017-06-10 */
+
+/*!
+ * Aida
+ * http://labtheme.com
+ * @author Labrin
+ * @author-url http://labtheme.com
+ * @version 0.1.0
+ * @updated 2017-06-10 */
+
+/*!
+ * Aida
+ * http://labtheme.com
+ * @author Labrin
+ * @author-url http://labtheme.com
+ * @version 0.1.0
+ * @updated 2017-06-10 */
+
+/*!
+ * Aida
+ * http://labtheme.com
+ * @author Labrin
+ * @author-url http://labtheme.com
+ * @version 0.1.0
+ * @updated 2017-06-10 */
+
+/*!
+ * Aida
+ * http://labtheme.com
+ * @author Labrin
+ * @author-url http://labtheme.com
+ * @version 0.1.0
+ * @updated 2017-06-10 */
+
+/*!
+ * Aida
+ * http://labtheme.com
+ * @author Labrin
+ * @author-url http://labtheme.com
+ * @version 0.1.0
+ * @updated 2017-06-10 */
+
+/*!
+ * Aida
+ * http://labtheme.com
+ * @author Labrin
+ * @author-url http://labtheme.com
+ * @version 0.1.0
+ * @updated 2017-06-10 */
 
 /*  Imported styles
 ----------------------------------------------------*/
 @import url(icons/foundation-icons.css);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic");
 meta.foundation-version {
   font-family: "/{{VERSION}}/";
 }
@@ -84,7 +132,7 @@ body {
   background: #fff;
   color: #222;
   cursor: auto;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Lato;
   font-style: normal;
   font-weight: normal;
   line-height: 24px;
@@ -8343,7 +8391,7 @@ th.hide-for-touch {
 ----------------------------------------------------*/
 .ht,
 .font-dosis {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 /*  header
@@ -8357,7 +8405,7 @@ header.head .logo .slogan {
   margin: 10px 0 0;
   text-align: center;
   color: #666;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 14px;
 }
 header.head .lg {
