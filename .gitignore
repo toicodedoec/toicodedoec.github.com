@@ -16,4 +16,5 @@ package-lock.json
 
 auto-body/.sass-cache/
 auto-body/package-lock.json
-auto-body/node_modules/*
+
+node_modules/
