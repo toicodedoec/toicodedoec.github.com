@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Switch theme in an existing Jekyll installation
-image: /img/avater-icon.jpg
+image: /img/avatar-icon.png
 tags: [blog, github-page]
 ---
 
