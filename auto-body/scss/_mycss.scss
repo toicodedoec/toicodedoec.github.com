@@ -1,0 +1,105 @@
+/* ===========================
+--- Intro
+============================ */
+
+.intro {
+	width:100%;
+	position:relative;
+}
+
+#intro{	
+	background-image: url(../img/img-bg.jpg);
+	background-size: cover;
+}
+
+.intro .slogan {
+	padding:250px 0 60px;
+	text-align: center;
+	
+}
+.intro .slogan h1 {
+	color: #fff;
+	line-height: 1.1em;
+	margin-bottom: 20px;
+	 font-size: 40px;
+}
+.intro .slogan p {
+	color: #eee;
+	margin-bottom: 50px;
+	font-size: 20px;
+}
+
+
+.brand-heading {
+    font-size: 40px;
+}
+
+.intro-text {
+    font-size: 18px;
+}
+
+
+/* slider */
+
+.tp-caption.custom_large_white {
+	color: #FFF;
+	text-shadow: none;
+	font-size: 60px;
+	line-height: 60px;
+	font-weight: 700;
+	font-family: Montserrat, sans-serif;
+	background-color: rgba(0, 0, 0, 0);
+	text-decoration: none;
+	text-transform: uppercase;
+	border-width: 0px;
+	border-color: #000;
+	border-style: none;
+}
+
+.tp-caption a.btn {
+	color: #fff;
+}
+
+/* Media queries */
+
+@media(min-width:767px) {
+
+    .intro {
+        height: 100%;
+        padding: 0;
+    }
+
+    .brand-heading {
+        font-size: 100px;
+    }
+	
+    .intro-text {
+        font-size: 25px;
+    }
+
+
+}
+@media (max-width:768px) {
+	
+	.team.boxed-grey {
+		margin-bottom: 30px;
+	}
+	
+	.boxed-grey {
+		margin-bottom: 30px;
+	}
+	.intro .slogan {
+		padding:100px 0 60px;
+		
+	}
+	
+}
+
+@media (max-width:480px) {
+
+	.intro .slogan {
+		padding:170px 0 60px;
+		
+	}
+	
+}

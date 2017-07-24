@@ -1,0 +1,438 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aida Landing page</title>
+    <link rel="stylesheet" href="css/design.css" />
+    <script src="js/build/jquery-1.11.0.min.js"></script>
+    <script src="js/build/script.min.js"></script>
+
+    <style scoped>
+        @media (max-width: 767px) {
+            .on-the-fly-behavior {
+                text-align: center !important;
+            }
+            .none-display-call-us {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="row head">
+        <div class="logo small-12 medium-3 large-2 column small-text-center">
+            <img class="lg" src="" data-interchange="[img/aida.png, (default)], [img/aida@2x.png, (retina)]" />
+            <span class="slogan">Premium Landing Page</span>
+        </div>
+        <!-- /.logo left -->
+        <div class="phone small-12 medium-5 large-4 column text-right on-the-fly-behavior">
+            <div style="display: inline-block">
+                <span class="fi-telephone phone-icon left model-round"></span>
+                <h4 class="number">
+                    <small class="callus ht none-display-call-us">CALL US:</small> 555-555-555
+                </h4>
+            </div>
+        </div>
+        <!-- /.phone right -->
+    </header>
+
+    <!-- Section: intro -->
+    <section id="intro" class="section intro">
+        <div class="slogan">
+            <h1>This is Ninestars</h1>
+            <p>make awesome stuff with Bootstrap framework</p>
+            <a href="#about" class="btn btn-skin scroll">Learn more</a>
+        </div>
+    </section>
+    <!-- /Section: intro -->
+
+    <section class="services row section" data-equalizer>
+        <h2 class="stnd-title text-center ht">
+            OUR SERVICES
+            <span>We are doing a couple of things you might be interested in</span>
+        </h2>
+        <!-- /.stnd-title -->
+        <div class="small-12 large-3 medium-3 columns text-center" data-equalizer-watch>
+            <div class="fi-lightbulb srv-icon center-block"></div>
+            <!-- /.fi-heart srv-icon -->
+            <div class="description">
+                <h6>Clean design</h6>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+            </div>
+            <!-- /.description -->
+        </div>
+        <div class="small-12 large-3 medium-3 columns text-center" data-equalizer-watch>
+            <div class="fi-laptop srv-icon center-block"></div>
+            <!-- /.fi-heart srv-icon -->
+            <div class="description">
+                <h6>Responsive design</h6>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+            </div>
+            <!-- /.description -->
+        </div>
+        <div class="small-12 large-3 medium-3 columns text-center" data-equalizer-watch>
+            <div class="fi-megaphone srv-icon center-block"></div>
+            <!-- /.fi-heart srv-icon -->
+            <div class="description">
+                <h6>Supporting</h6>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+            </div>
+            <!-- /.description -->
+        </div>
+        <div class="small-12 large-3 medium-3 columns text-center" data-equalizer-watch>
+            <div class="fi-page-edit srv-icon center-block"></div>
+            <!-- /.fi-heart srv-icon -->
+            <div class="description">
+                <h6>Easy Customization</h6>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+            </div>
+            <!-- /.description -->
+        </div>
+    </section>
+    <!-- /.services -->
+
+    <section class="grey-zone section">
+        <section class="services">
+            <h2 class="stnd-title text-center ht">
+                WHY CHOOSING THIS LANDING PAGE?
+                <span>Here you have some reasons and some features</span>
+            </h2>
+            <!-- /.stnd-title -->
+            <div class="row list">
+                <div class="small-12 large-7 columns image">
+                    <img data-interchange="[content/responsive-product.png, (default)], [content/responsive-product@2x.png, (retina)]" class="model-radius pic">
+                </div>
+                <!-- /.large-4 columns -->
+                <div class="small-12 large-5 columns">
+                    <ul class="check-list list-unstyled nm">
+                        <li><span class="fi-checkbox licon"></span> Responsive layout, optimized for high conversion</li>
+                        <li><span class="fi-checkbox licon"></span> Clean & Beautiful Design focused on good readability</li>
+                        <li><span class="fi-checkbox licon"></span> Seo Optimized , Light weight code based on Foundation</li>
+                        <li><span class="fi-checkbox licon"></span> Easy to Cusyomize With an extensive documentation</li>
+                        <li><span class="fi-checkbox licon"></span> Retina ready interface</li>
+                    </ul>
+                    <!--<a class="button success expand large round" href="#">BUY NOW <span class="fi-like font-36"></span></a>-->
+                </div>
+                <!-- /.large-4 columns -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.services -->
+    </section>
+    <!-- /.section -->
+
+    <section class="section row faq">
+        <h2 class="stnd-title text-center ht">
+            FAQ
+            <span>Got questions? We've got answers!</span>
+        </h2>
+
+        <div class="small-12 medium-6 large-6 columns">
+            <dl class="accordion" data-accordion>
+                <dd class="active">
+                    <a href="#panel1b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                    <div id="panel1b" class="content active">
+                        Panel 1. Lorem ipsum dolor sit amet, <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">consectetur</span>                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </dd>
+                <dd>
+                    <a href="#panel2b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                    <div id="panel2b" class="content">
+                        Panel 2. Lorem ipsum dolor sit amet, consectetur
+                        <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">adipisicing</span>                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </dd>
+                <dd>
+                    <a href="#panel3b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                    <div id="panel3b" class="content">
+                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="small-12 medium-6 large-6 columns">
+            <dl class="accordion" data-accordion>
+                <dd>
+                    <a href="#panel4b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                    <div id="panel4b" class="content">
+                        Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                        <span data-tooltip class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">eiusmod</span>                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </dd>
+                <dd>
+                    <a href="#panel5b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                    <div id="panel5b" class="content">
+                        Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                    </div>
+                </dd>
+                <dd>
+                    <a href="#panel6b" class="acr-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                    <div id="panel6b" class="content">
+                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </section>
+    <!-- /.section -->
+
+    <section class="grey-zone section">
+        <h2 class="stnd-title text-center ht">
+            OUR TEAM
+            <span>We're a small, friendly and talented team.</span>
+        </h2>
+
+        <div class="row team">
+            <div class="small-12 large-3 medium-3 columns text-center member">
+                <img data-interchange="[content/team-4.jpg, (default)], [content/team-4@2x.jpg, (retina)]" class="photo model-round">
+                <ul class="button-group social-accounts round center-block">
+                    <li>
+                        <a href="#" class="button tiny fi-social-facebook secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-twitter secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-google-plus secondary"></a>
+                    </li>
+                </ul>
+                <div class="about">
+                    <h6>
+                        Isaac Asimov
+                        <span>CEO Great Company</span>
+                    </h6>
+                </div>
+            </div>
+            <!-- /.small-12 large-3 medium-6 columns text-center -->
+            <div class="small-12 large-3 medium-3 columns text-center member">
+                <img data-interchange="[content/team-1.jpg, (default)], [content/team-1@2x.jpg, (retina)]" class="photo model-round">
+                <ul class="button-group social-accounts round center-block">
+                    <li>
+                        <a href="#" class="button tiny fi-social-facebook secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-twitter secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-google-plus secondary"></a>
+                    </li>
+                </ul>
+                <div class="about">
+                    <h6>
+                        Isaac Asimov
+                        <span>Manager</span>
+                    </h6>
+                </div>
+            </div>
+            <!-- /.small-12 large-3 medium-6 columns text-center -->
+            <div class="small-12 large-3 medium-3 columns text-center member">
+                <img data-interchange="[content/team-3.jpg, (default)], [content/team-3@2x.jpg, (retina)]" class="photo model-round">
+                <ul class="button-group social-accounts round center-block">
+                    <li>
+                        <a href="#" class="button tiny fi-social-facebook secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-twitter secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-google-plus secondary"></a>
+                    </li>
+                </ul>
+                <div class="about">
+                    <h6>
+                        Isaac Asimov
+                        <span>Lawyer</span>
+                    </h6>
+                </div>
+            </div>
+            <!-- /.small-12 large-3 medium-6 columns text-center -->
+            <div class="small-12 large-3 medium-3 columns text-center member">
+                <img data-interchange="[content/team-5.jpg, (default)], [content/team-5@2x.jpg, (retina)]" class="photo model-round">
+                <ul class="button-group social-accounts round center-block">
+                    <li>
+                        <a href="#" class="button tiny fi-social-facebook secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-twitter secondary"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="button tiny fi-social-google-plus secondary"></a>
+                    </li>
+                </ul>
+                <div class="about">
+                    <h6>
+                        Isaac Asimov
+                        <span>CEO Great Company</span>
+                    </h6>
+                </div>
+            </div>
+            <!-- /.small-12 large-3 medium-6 columns text-center -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.section row -->
+
+    <section class="section price">
+        <h2 class="stnd-title text-center ht">
+            OUR PLANS
+            <span>Choose your package</span>
+        </h2>
+        <div class="row plans">
+            <div class="large-3 small-12 medium-6 columns">
+                <ul class="pricing-table">
+                    <li class="title">Basic</li>
+                    <li class="tag white-text"><span class="fi-burst-sale"></span></li>
+                    <li class="price">$99<sup>.99</sup><span class="mnt">per month</span></li>
+                    <li class="description">An awesome description</li>
+                    <li class="bullet-item">1 Database</li>
+                    <li class="bullet-item">5GB Storage</li>
+                    <li class="bullet-item">20 Users</li>
+                    <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+                </ul>
+            </div>
+            <!-- /.large-3 small-12 medium-6 -->
+            <div class="large-3 small-12 medium-6 columns">
+                <ul class="pricing-table">
+                    <li class="title">Standard</li>
+                    <li class="price">$199<sup>.99</sup><span class="mnt">per month</span></li>
+                    <li class="description">An awesome description</li>
+                    <li class="bullet-item">1 Database</li>
+                    <li class="bullet-item">5GB Storage</li>
+                    <li class="bullet-item">20 Users</li>
+                    <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+                </ul>
+            </div>
+            <!-- /.large-3 small-12 medium-6 -->
+            <div class="large-3 small-12 medium-6 columns">
+                <ul class="pricing-table special">
+                    <li class="title">Professional</li>
+                    <li class="price">$499<sup>.99</sup><span class="mnt">per month</span></li>
+                    <li class="description">An awesome description</li>
+                    <li class="bullet-item">1 Database</li>
+                    <li class="bullet-item">5GB Storage</li>
+                    <li class="bullet-item">20 Users</li>
+                    <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+                </ul>
+            </div>
+            <!-- /.large-3 small-12 medium-6 -->
+            <div class="large-3 small-12 medium-6 columns">
+                <ul class="pricing-table">
+                    <li class="title">Business</li>
+                    <li class="tag white-text"><span class="fi-burst-new"></span></li>
+                    <li class="price">$999<sup>.99</sup><span class="mnt">per month</span></li>
+                    <li class="description">An awesome description</li>
+                    <li class="bullet-item">1 Database</li>
+                    <li class="bullet-item">5GB Storage</li>
+                    <li class="bullet-item">20 Users</li>
+                    <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+                </ul>
+            </div>
+            <!-- /.large-3 small-12 medium-6 -->
+        </div>
+    </section>
+    <!-- /.section row -->
+
+    <section class="gray-zone section">
+        <h2 class="stnd-title text-center ht">
+            TESTIMONIALS
+            <span>Made for everyone</span>
+        </h2>
+        <div class="row">
+            <ul class="example-orbit-content" data-orbit data-options="animation:fade;pause_on_hover:true;animation_speed:500;navigation_arrows:false;slide_number:false;timer:false;">
+                <li data-orbit-slide="headline-1">
+                    <div class="text-center quotes">
+                        <span class="fi-quote icon"></span>
+                        <blockquote class="nb">
+                            This is a great product. I got it a while ago and i couldn’t be happier with my choice.
+                            <br/> It’s definitely a good investment if you work in my field.
+                            <cite>Isaac Asimov (CEO Great Company)</cite>
+                        </blockquote>
+                    </div>
+                </li>
+                <li data-orbit-slide="headline-2">
+                    <div class="text-center quotes">
+                        <span class="fi-quote icon"></span>
+                        <blockquote class="nb">
+                            I do not fear computers. I fear the lack of them. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
+                            <cite>Isaac Asimov (App User)</cite>
+                        </blockquote>
+                    </div>
+                </li>
+                <li data-orbit-slide="headline-3">
+                    <div class="text-center quotes">
+                        <span class="fi-quote icon"></span>
+                        <blockquote class="nb">
+                            Suspendisse cursus risus laoreet turpis auctor, pharetra massa varius. Suspendisse dignissim sollicitudin aliquam. Nullam
+                            vehicula pharetra ultrices sapien gravida
+                            <cite>Isaac Asimov (Manager)</cite>
+                        </blockquote>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- /.section -->
+
+    <section class="blue-zone subscribe">
+        <div class="row">
+            <div class="large-6 columns texty">
+                <h3 class="ht">Subscribe to Our Newsletter</h3>
+                <p>If you want to receive monthly/weekly eNewsletters from us, then please enter your email address to subscribe.</p>
+            </div>
+            <div class="large-6 columns formy">
+                <form action="#" data-abide>
+                    <div class="row collapse">
+                        <div class="small-9 columns">
+                            <input type="email" placeholder="Enter your e-mail address..." class="nb mail" required>
+                            <small class="error">Please, write valid mail adress.</small>
+                        </div>
+                        <div class="small-3 columns">
+                            <button type="submit" class="button postfix dark">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- /.blue-zone -->
+
+    <footer class="foot grey-zone">
+        <div class="row">
+            <div class="large-6 small-12 columns">
+                <p class="copy"><strong>Aida</strong> &copy; Copyright 2015. All rights reserved</p>
+            </div>
+            <!-- /.large-6 columns -->
+            <div class="large-6 small-12 columns">
+                <ul class="social-list inline-list">
+                    <li><a class="url social-facebook has-tip tip-top radius" data-tooltip title="Facebook" href="#"><span class="fi-social-facebook"></span></a></li>
+                    <li><a class="url social-twitter has-tip tip-top radius" data-tooltip title="Twitter" href="#"><span class="fi-social-twitter"></span></a></li>
+                    <li><a class="url social-google-plus has-tip tip-top radius" data-tooltip title="Google+" href="#"><span class="fi-social-google-plus"></span></a></li>
+                    <li><a class="url social-instagram has-tip tip-top radius" data-tooltip title="Instagram" href="#"><span class="fi-social-instagram"></span></a></li>
+                    <li><a class="url social-youtube has-tip tip-top radius" data-tooltip title="Youtube" href="#"><span class="fi-social-youtube"></span></a></li>
+                </ul>
+            </div>
+            <!-- /.large-6 columns -->
+        </div>
+        <!-- /.row -->
+    </footer>
+    <!-- /.foot -->
+
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+
+</html>
