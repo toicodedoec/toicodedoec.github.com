@@ -69,3 +69,5 @@ If at any later point you want to update the theme to include the latest upstrea
 
 git pull upstream master
 And fix any merge conflicts. Here I assume the upstream remote is still set to the theme's repository (you can check this with git remote -v).
+
+(https://stackoverflow.com/questions/31327045/switch-theme-in-an-existing-jekyll-installation)
