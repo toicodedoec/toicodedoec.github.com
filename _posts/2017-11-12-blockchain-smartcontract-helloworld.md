@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Blockchain ABC] Write your first smart contract using Eth
+title: Blockchain ABC Write your first smart contract using Eth
 tags: [blockchain, smart-contract]
 ---
 
