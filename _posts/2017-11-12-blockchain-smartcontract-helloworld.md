@@ -78,6 +78,9 @@ Private Keys
 (8) 76b46dcb40178f657cfd813fe206604f2454f3b1ae5b4b7d9ceab8db9bb15b9d
 (9) 9fbed3a18037560b34362964a96d6bce62eeda42c024b36d0bcbede3d84b79a3
 ```
+(cont.)  
 
 #### 4/ Tóm tắt lại một chút
-a/ Để có thể làm việc với Eth blockchain thì mình cần phải connect vô được nó, để connect vô được nó thì mình cần connect được vô Eth protocol, khi mình đã là 1 node ở trong blockchain rồi thì mình có connect vô các node khác cũng như có thể làm các việc: mine blocks, send transaction, deploy contract.
+a/ Để có thể làm việc với Eth blockchain thì mình cần phải connect vô được nó, để connect vô được nó thì mình cần connect được vô Eth protocol, khi mình đã là 1 node ở trong blockchain rồi thì mình có connect vô các node khác cũng như có thể làm các việc: mine blocks, send transaction, deploy contract.  
+
+(cont.)
