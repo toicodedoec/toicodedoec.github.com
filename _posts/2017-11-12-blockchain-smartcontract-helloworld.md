@@ -46,7 +46,7 @@ c/ Để build và deploy cái smart contract của mình thì cần dùng đế
 ```npm install -g truffle```
 
 #### 3/ Ok, giờ viết cái đầu tiên
-a/ Đầu tiên start Eth node lên  
+a/ Đầu tiên start cái in-memory blockchain lên  
 ```
 testrpc
 ```
@@ -78,7 +78,17 @@ Private Keys
 (8) 76b46dcb40178f657cfd813fe206604f2454f3b1ae5b4b7d9ceab8db9bb15b9d
 (9) 9fbed3a18037560b34362964a96d6bce62eeda42c024b36d0bcbede3d84b79a3
 ```
-(cont.)  
+Nôm na là bây giờ chúng ta có 10 cái "ví", mỗi cái "ví" có 100 Eth, mỗi cái "ví" được đại diện bởi address và key.  
+
+Chúng ta sẽ dùng MetaMask (https://metamask.io/) để simulate GUI cho mấy cái ví này.
+> MetaMask is more than just an Ether wallet. It's an Ethereum Browser, like Mist! It allows you all the same functions, features and ease of access from regular Ethereum Wallets, and it allows you to interact with Dapps and Smart Contracts, and all without the need to download the blockchain or install any software, you can just install it as a Google Chrome Extension!
+
+Ok giờ chúng ta import thông tin mấy cái ví mà testrpc tạo ra vào trong MetaMask  
+
+![1](/img/1.JPG)  
+![1](/img/2.JPG)  
+![1](/img/4.JPG)  
+![1](/img/5.JPG)  
 
 #### 4/ Tóm tắt lại một chút
 a/ Để có thể làm việc với Eth blockchain thì mình cần phải connect vô được nó, để connect vô được nó thì mình cần connect được vô Eth protocol, khi mình đã là 1 node ở trong blockchain rồi thì mình có connect vô các node khác cũng như có thể làm các việc: mine blocks, send transaction, deploy contract.  
