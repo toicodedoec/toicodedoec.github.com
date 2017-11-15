@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Keep it simple
+subtitle: Make it simple, but significant!
 ---
 
 My name is Doãn (English name: John). I have the following qualities:
