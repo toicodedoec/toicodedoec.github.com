@@ -5,6 +5,7 @@ tags: [blockchain, smart-contract]
 ---
 
 _Post này để tổng hợp những kiến thức cơ bản collect được về smart contract_
+_Tham khảo source code từ https://erc20token.sonnguyen.ws/en/latest/ _
 
 #### 1/ Ethereum smart contract
 Có nhiều bên (???) cung cấp API và hỗ trợ deploy smart contract, tuy nhiên ở thời điểm hiện tại (11/2017) thì smart contract dựa trên nền (???) Ethereum (Ethereum Smart Contract) là phổ biến nhất, nghe nói là được support nhiều về mặt API và dễ làm (???).
@@ -45,8 +46,8 @@ Vậy có thể hiểu là __testrpc__ giúp giả lập 1 in-memory blockchain 
 c/ Để build và deploy cái smart contract của mình thì cần dùng đến Truffle (https://truffle.readthedocs.io/en/beta/):   
 ```npm install -g truffle```
 
-#### 3/ Ok, giờ viết cái đầu tiên
-a/ Đầu tiên start cái in-memory blockchain lên  
+#### 3/ Giờ cần start cái in-memory blockchain lên  
+Chạy command sau
 ```
 testrpc
 ```
@@ -86,11 +87,287 @@ Chúng ta sẽ dùng MetaMask (https://metamask.io/) để simulate GUI cho mấ
 Ok giờ chúng ta import thông tin mấy cái ví mà testrpc tạo ra vào trong MetaMask  
 
 ![1](/img/1.png)  
+
 ![2](/img/2.png)  
+
 ![3](/img/3.png)  
+
 ![4](/img/4.png)  
 
-#### 4/ Tóm tắt lại một chút
+#### 4/ Giờ viết cái smart-contract bằng Solidity  
+a/ Tạo 1 project mới với __Truffle__  
+```
+truffle init
+```
+
+Truffle sẽ tạo sẵn 1 số file cần thiết cho việc build & deploy, chúng ta sẽ remove tất cả các file .sol được tạo sẵn và tạo ra 1 file .sol mới tên là __IcoContract.sol__ trong folder __contracts__ cho cái contract chúng ta sắp viết.  
+
+b/ Copy source code [ở đây](https://github.com/toicodedoec/eth-smart-contract/blob/master/contracts/IcoContract.sol) quăng vô :D  
+
+c/ Một số giải thích sơ sơ về source code
+* Source code này tuân theo format (interface) được quy định bởi ERC20 (nôm na là chuẩn ERC20), có thể đọc giải thích khá dễ hiểu [ở đây](https://theethereum.wiki/w/index.php/ERC20_Token_Standard)  
+* Dựa vào standard token mình tạo ra token của riêng mình
+```
+// ================= IcoToken  start =======================
+contract IcoToken is SafeMath, StandardToken, Pausable {
+  string public name;
+  string public symbol;
+  uint256 public decimals;
+  string public version;
+  address public icoContract;
+
+  function IcoToken(
+    string _name,
+    string _symbol,
+    uint256 _decimals,
+    string _version
+  )
+  {
+    name = _name;
+    symbol = _symbol;
+    decimals = _decimals;
+    version = _version;
+  }
+
+  function transfer(address _to, uint _value) whenNotPaused returns (bool success) {
+    return super.transfer(_to,_value);
+  }
+
+  function approve(address _spender, uint _value) whenNotPaused returns (bool success) {
+    return super.approve(_spender,_value);
+  }
+
+  function balanceOf(address _owner) constant returns (uint balance) {
+    return super.balanceOf(_owner);
+  }
+
+  function setIcoContract(address _icoContract) onlyOwner {
+    if (_icoContract != address(0)) {
+      icoContract = _icoContract;
+    }
+  }
+
+  function sell(address _recipient, uint256 _value) whenNotPaused returns (bool success) {
+      assert(_value > 0);
+      require(msg.sender == icoContract);
+
+      balances[_recipient] += _value;
+      totalSupply += _value;
+
+      Transfer(0x0, owner, _value);
+      Transfer(owner, _recipient, _value);
+      return true;
+  }
+}
+```
+* Sau đó tạo cái contract (nếu ko hiểu gì hết thì cứ ignore đi, tại vì giờ mình cũng hiểu lơ mơ thôi T.T)  
+```
+contract IcoContract is SafeMath, Pausable {
+  IcoToken public ico;
+
+  uint256 public tokenCreationCap;
+  uint256 public totalSupply;
+
+  address public ethFundDeposit;
+  address public icoAddress;
+
+  uint256 public fundingStartTime;
+  uint256 public fundingEndTime;
+  uint256 public minContribution;
+
+  bool public isFinalized;
+  uint256 public tokenExchangeRate;
+
+  event LogCreateICO(address from, address to, uint256 val);
+
+  function CreateICO(address to, uint256 val) internal returns (bool success) {
+    LogCreateICO(0x0, to, val);
+    return ico.sell(to, val);
+  }
+
+  function IcoContract(
+    address _ethFundDeposit,
+    address _icoAddress,
+    uint256 _tokenCreationCap,
+    uint256 _tokenExchangeRate,
+    uint256 _fundingStartTime,
+    uint256 _fundingEndTime,
+    uint256 _minContribution
+  )
+  {
+    ethFundDeposit = _ethFundDeposit;
+    icoAddress = _icoAddress;
+    tokenCreationCap = _tokenCreationCap;
+    tokenExchangeRate = _tokenExchangeRate;
+    fundingStartTime = _fundingStartTime;
+    minContribution = _minContribution;
+    fundingEndTime = _fundingEndTime;
+    ico = IcoToken(icoAddress);
+    isFinalized = false;
+  }
+
+  function () payable {    
+    createTokens(msg.sender, msg.value);
+  }
+
+  /// @dev Accepts ether and creates new ICO tokens.
+  function createTokens(address _beneficiary, uint256 _value) internal whenNotPaused {
+    require (tokenCreationCap > totalSupply);
+    require (now >= fundingStartTime);
+    require (now <= fundingEndTime);
+    require (_value >= minContribution);
+    require (!isFinalized);
+
+    uint256 tokens = safeMult(_value, tokenExchangeRate);
+    uint256 checkedSupply = safeAdd(totalSupply, tokens);
+
+    if (tokenCreationCap < checkedSupply) {        
+      uint256 tokensToAllocate = safeSubtract(tokenCreationCap, totalSupply);
+      uint256 tokensToRefund   = safeSubtract(tokens, tokensToAllocate);
+      totalSupply = tokenCreationCap;
+      uint256 etherToRefund = tokensToRefund / tokenExchangeRate;
+
+      require(CreateICO(_beneficiary, tokensToAllocate));
+      msg.sender.transfer(etherToRefund);
+      ethFundDeposit.transfer(this.balance);
+      return;
+    }
+
+    totalSupply = checkedSupply;
+
+    require(CreateICO(_beneficiary, tokens)); 
+    ethFundDeposit.transfer(this.balance);
+  }
+
+  /// @dev Ends the funding period and sends the ETH home
+  function finalize() external onlyOwner {
+    require (!isFinalized);
+    // move to operational
+    isFinalized = true;
+    ethFundDeposit.transfer(this.balance);
+  }
+}
+```
+d/ Code xong cái contract rồi, giờ cần deploy nó lên để test. Truffle hỗ trợ deploy, tuy nhiên chúng ta phải viết 1 đoạn script để define the scenario. Tạo ra 1 file __2_deploy.contracts.js__ trong folder __migrations__ và copy code bên dưới paste vào:
+```
+const IcoToken = artifacts.require('IcoToken');
+const IcoContract = artifacts.require('IcoContract');
+
+module.exports = function(deployer) {
+  deployer.deploy(
+    IcoToken,
+    'Test Token',
+    'TST',
+    '18',
+    '1.0'
+  ).then(() => {
+    return deployer.deploy(
+      IcoContract,
+      '0xc3d2a1629d3990d8b9d9799c8675ec18c6f00247', // Your ETH Address
+      IcoToken.address,
+      '100000000000000000000000000', // 100000000 Token
+      '1000', // 1 ETH = 1000 Token
+      '1504051200', // 30/08/2017
+      '1514592000', // 30/12/2017
+      '100000000000000000' // 0.1 ETH
+    ).then(() => {
+      return IcoToken.deployed().then(function(instance) {
+        return instance.setIcoContract(IcoContract.address);
+      });
+    });
+  });
+};
+```
+Giữ nguyên các giá trị như trong code mẫu, ngoại trừ update lại address của ví của bạn (là nơi chứa token để bán cho mọi người).  
+
+Chạy command: ```truffle deploy --reset```
+
+Nếu mọi thứ OK nó sẽ phải ra vầy
+```
+$ truffle deploy --reset
+Using network 'development'.
+
+Running migration: 1_initial_migration.js
+  Replacing Migrations...
+  ... 0xc1e2311b96095645ed75313d305b2c39394c406a3cb755a12c780b90d090671a
+  Migrations: 0xe5b199915f88c99bef00a2adbd65a1f03de8abf8
+Saving successful migration to network...
+  ... 0x699aed79bada23ed65419a6efb8ad26693dbf72a4e3ccfffd0fb9db51b3aa758
+Saving artifacts...
+Running migration: 2_deploy.contracts.js
+  Replacing IcoToken...
+  ... 0x1ba5a0c63ff6787567456331fc935c367f2a2352e0b34ad15be7eade47cfbea1
+  IcoToken: 0x599f3566cd027953577ad8626979385fd8bc6d9b
+  Replacing IcoContract...
+  ... 0xa0f6bda7bad2febdb29a0dbaae02afcf5c819932eb540614eeebb00335a50817
+  IcoContract: 0x51c5c33f6d10c66c258c4786daabef63b00227a9
+  ... 0xf1e8653a01704de6d7b059dd2ddc11e8d3f04b2dd8da44f2e6b8d137abc19c0f
+Saving successful migration to network...
+  ... 0xe17d6a5296d157366e0c2eb60547220e6db6ed9980a1aa41013abcee83bba390
+Saving artifacts...
+```
+Như vậy chúng ta đã deploy thành công contract vào trong blockchain, console của __testrpc__ cũng update vừa có block được insert vào blockchain
+
+![2](/img/6.png)  
+
+Có 2 thông tin quan trọng chúng ta cần lưu ý:  
+1/ Address của IcoToken contract: 0x599f3566cd027953577ad8626979385fd8bc6d9b  
+2/ Address của IcoContract contract: 0x51c5c33f6d10c66c258c4786daabef63b00227a9 => nhà đầu tư sẽ chuyển ETH vào ví này để nhận lại được token của bạn
+
+* Nếu bạn gặp lỗi 
+```
+Error: No network specified. Cannot determine current network.
+```
+thì vào file __truffle.js__ update lại thông tin network trỏ về localhost:
+```
+module.exports = {
+  // See <http://truffleframework.com/docs/advanced/configuration>
+  // to customize your Truffle configuration!
+  networks: {
+    development: {
+      host: "localhost",
+      port: 8545,
+      network_id: "*" // Match any network id      
+    }
+  }
+};
+```
+* Nếu bạn gặp lỗi
+```
+Error: Error: Exceeds block gas limit
+```
+thì vào file __truffle.js__ update thêm value của __gas__ (???):
+```
+module.exports = {
+  // See <http://truffleframework.com/docs/advanced/configuration>
+  // to customize your Truffle configuration!
+  networks: {
+    development: {
+      host: "localhost",
+      port: 8545,
+      network_id: "*", // Match any network id
+      gas: 3000000
+    }
+  }
+};
+```
+e/ OK, giờ contract của chúng ta đã được deploy lên blockchain, giờ chúng ta sẽ dùng MetaMask để mua token thử
+
+Ở bước trước chúng ta đã có địa chỉ của 2 ví trong tay
+1/ 1 ví IcoContract để nhà đầu tư chuyển ETH vào
+2/ 1 ví IcoToken chứa token
+
+Bây giờ chúng ta sẽ chuyển ETH vào ví IcoContract của để nhận về lượng token tương ứng
+
+![2](/img/7.png)  
+
+![2](/img/8.png)  
+
+![2](/img/9.png)  
+
+![2](/img/10.png)  
+
+#### 5/ Tóm tắt lại một chút
 a/ Để có thể làm việc với Eth blockchain thì mình cần phải connect vô được nó, để connect vô được nó thì mình cần connect được vô Eth protocol, khi mình đã là 1 node ở trong blockchain rồi thì mình có connect vô các node khác cũng như có thể làm các việc: mine blocks, send transaction, deploy contract.  
 
 (cont.)
