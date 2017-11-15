@@ -381,6 +381,10 @@ Bây giờ để kiểm tra thực sự chúng ta có nhận được token củ
 
 ![2](/img/10.png)  
 
+Đến đây thì về cơ bản chúng ta đã làm đc 1 cái smart contract và deploy nó lên in-memory blockchain để test.  
+
+Bài viết tiếp theo chúng ta sẽ làm thử 1 ví dụ deploy cái smart contract của chúng ta lên real blockchain.  
+
 #### 5/ Tóm tắt lại một chút
 a/ Để có thể làm việc với Eth blockchain thì mình cần phải connect vô được nó, để connect vô được nó thì mình cần connect được vô Eth protocol, khi mình đã là 1 node ở trong blockchain rồi thì mình có connect vô các node khác cũng như có thể làm các việc: mine blocks, send transaction, deploy contract.  
 
