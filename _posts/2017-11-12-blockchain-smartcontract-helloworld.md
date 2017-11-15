@@ -247,8 +247,10 @@ contract IcoContract is SafeMath, Pausable {
     ethFundDeposit.transfer(this.balance);
   }
 }
-```
-d/ Code xong cái contract rồi, giờ cần deploy nó lên để test. Truffle hỗ trợ deploy, tuy nhiên chúng ta phải viết 1 đoạn script để define the scenario. Tạo ra 1 file __2_deploy.contracts.js__ trong folder __migrations__ và copy code bên dưới paste vào:
+```  
+
+d/ Code xong cái contract rồi, giờ cần deploy nó lên để test. Truffle hỗ trợ deploy, tuy nhiên chúng ta phải viết 1 đoạn script để define the scenario. Tạo ra 1 file __2_deploy.contracts.js__ trong folder __migrations__ và copy code bên dưới paste vào:  
+
 ```
 const IcoToken = artifacts.require('IcoToken');
 const IcoContract = artifacts.require('IcoContract');
@@ -277,12 +279,14 @@ module.exports = function(deployer) {
     });
   });
 };
-```
+```  
+
 Giữ nguyên các giá trị như trong code mẫu, ngoại trừ update lại address của ví của bạn (là nơi chứa token để bán cho mọi người).  
 
-Chạy command: ```truffle deploy --reset```
+Chạy command: ```truffle deploy --reset```  
 
-Nếu mọi thứ OK nó sẽ phải ra vầy
+Nếu mọi thứ OK nó sẽ phải ra vầy  
+
 ```
 $ truffle deploy --reset
 Using network 'development'.
@@ -305,14 +309,15 @@ Running migration: 2_deploy.contracts.js
 Saving successful migration to network...
   ... 0xe17d6a5296d157366e0c2eb60547220e6db6ed9980a1aa41013abcee83bba390
 Saving artifacts...
-```
-Như vậy chúng ta đã deploy thành công contract vào trong blockchain, console của __testrpc__ cũng update vừa có block được insert vào blockchain
+```  
+
+Như vậy chúng ta đã deploy thành công contract vào trong blockchain, console của __testrpc__ cũng update vừa có block được insert vào blockchain  
 
 ![2](/img/6.png)  
 
 Có 2 thông tin quan trọng chúng ta cần lưu ý:  
 1/ Address của IcoToken contract: 0x599f3566cd027953577ad8626979385fd8bc6d9b  
-2/ Address của IcoContract contract: 0x51c5c33f6d10c66c258c4786daabef63b00227a9 => nhà đầu tư sẽ chuyển ETH vào ví này để nhận lại được token của bạn
+2/ Address của IcoContract contract: 0x51c5c33f6d10c66c258c4786daabef63b00227a9 => nhà đầu tư sẽ chuyển ETH vào ví này để nhận lại được token của bạn  
 
 * Nếu bạn gặp lỗi 
 ```
@@ -332,7 +337,7 @@ module.exports = {
   }
 };
 ```
-* Nếu bạn gặp lỗi
+* Nếu bạn gặp lỗi  
 ```
 Error: Error: Exceeds block gas limit
 ```
@@ -353,11 +358,11 @@ module.exports = {
 ```
 e/ OK, giờ contract của chúng ta đã được deploy lên blockchain, giờ chúng ta sẽ dùng MetaMask để mua token thử
 
-Ở bước trước chúng ta đã có địa chỉ của 2 ví trong tay
-1/ 1 ví IcoContract để nhà đầu tư chuyển ETH vào
-2/ 1 ví IcoToken chứa token
+Ở bước trước chúng ta đã có địa chỉ của 2 ví trong tay  
+1/ 1 ví IcoContract để nhà đầu tư chuyển ETH vào  
+2/ 1 ví IcoToken chứa token  
 
-Bây giờ chúng ta sẽ chuyển ETH vào ví IcoContract của để nhận về lượng token tương ứng
+Bây giờ chúng ta sẽ chuyển ETH vào ví IcoContract của để nhận về lượng token tương ứng  
 
 ![2](/img/7.png)  
 
