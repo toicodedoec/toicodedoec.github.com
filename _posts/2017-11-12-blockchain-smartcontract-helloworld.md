@@ -106,7 +106,9 @@ b/ Copy source code [ở đây](https://github.com/toicodedoec/eth-smart-contrac
 
 c/ Một số giải thích sơ sơ về source code
 * Source code này tuân theo format (interface) được quy định bởi ERC20 (nôm na là chuẩn ERC20), có thể đọc giải thích khá dễ hiểu [ở đây](https://theethereum.wiki/w/index.php/ERC20_Token_Standard)  
-* Dựa vào standard token mình tạo ra token của riêng mình
+
+* Dựa vào standard token mình tạo ra token của riêng mình  
+
 ```
 // ================= IcoToken  start =======================
 contract IcoToken is SafeMath, StandardToken, Pausable {
@@ -161,6 +163,7 @@ contract IcoToken is SafeMath, StandardToken, Pausable {
 }
 ```
 * Sau đó tạo cái contract (nếu ko hiểu gì hết thì cứ ignore đi, tại vì giờ mình cũng hiểu lơ mơ thôi T.T)  
+
 ```
 contract IcoContract is SafeMath, Pausable {
   IcoToken public ico;
@@ -249,7 +252,11 @@ contract IcoContract is SafeMath, Pausable {
 }
 ```  
 
-d/ Code xong cái contract rồi, giờ cần deploy nó lên để test. Truffle hỗ trợ deploy, tuy nhiên chúng ta phải viết 1 đoạn script để define the scenario. Tạo ra 1 file __2_deploy.contracts.js__ trong folder __migrations__ và copy code bên dưới paste vào:  
+d/ Code xong cái contract rồi, giờ cần deploy nó lên để test.  
+
+Truffle hỗ trợ deploy, tuy nhiên chúng ta phải viết 1 đoạn script để define the scenario.  
+
+Tạo ra 1 file __2_deploy.contracts.js__ trong folder __migrations__ và copy code bên dưới paste vào:  
 
 ```
 const IcoToken = artifacts.require('IcoToken');
@@ -319,11 +326,8 @@ Có 2 thông tin quan trọng chúng ta cần lưu ý:
 1/ Address của IcoToken contract: 0x599f3566cd027953577ad8626979385fd8bc6d9b  
 2/ Address của IcoContract contract: 0x51c5c33f6d10c66c258c4786daabef63b00227a9 => nhà đầu tư sẽ chuyển ETH vào ví này để nhận lại được token của bạn  
 
-* Nếu bạn gặp lỗi 
-```
-Error: No network specified. Cannot determine current network.
-```
-thì vào file __truffle.js__ update lại thông tin network trỏ về localhost:
+Nếu bạn gặp lỗi __Error: No network specified. Cannot determine current network.__ thì vào file __truffle.js__ update lại thông tin network trỏ về localhost:
+
 ```
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -336,12 +340,10 @@ module.exports = {
     }
   }
 };
-```
-* Nếu bạn gặp lỗi  
-```
-Error: Error: Exceeds block gas limit
-```
-thì vào file __truffle.js__ update thêm value của __gas__ (???):
+```  
+
+Nếu bạn gặp lỗi  __Error: Error: Exceeds block gas limit__ thì vào file __truffle.js__ update thêm value của __gas__ (là số tiền bạn sẵn sàng trả cho những miners người mà sẽ gắn cái block của bạn vào blockchain, giá trị này thường được quy định sẵn bởi network):
+
 ```
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -355,7 +357,8 @@ module.exports = {
     }
   }
 };
-```
+```  
+
 e/ OK, giờ contract của chúng ta đã được deploy lên blockchain, giờ chúng ta sẽ dùng MetaMask để mua token thử
 
 Ở bước trước chúng ta đã có địa chỉ của 2 ví trong tay  
@@ -364,9 +367,15 @@ e/ OK, giờ contract của chúng ta đã được deploy lên blockchain, gi�
 
 Bây giờ chúng ta sẽ chuyển ETH vào ví IcoContract của để nhận về lượng token tương ứng  
 
+Bạn gửi cho người đứng ra ICO 1 ETH  
+
 ![2](/img/7.png)  
 
+Hệ thống ghi nhận lại transaction của bạn  
+
 ![2](/img/8.png)  
+
+Bây giờ để kiểm tra thực sự chúng ta có nhận được token của thằng cha ICO kia chưa, nhập địa chỉ ví token vào để kiểm tra: 
 
 ![2](/img/9.png)  
 
