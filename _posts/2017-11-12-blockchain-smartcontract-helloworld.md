@@ -85,10 +85,10 @@ Chúng ta sẽ dùng MetaMask (https://metamask.io/) để simulate GUI cho mấ
 
 Ok giờ chúng ta import thông tin mấy cái ví mà testrpc tạo ra vào trong MetaMask  
 
-![1](/img/1.JPG)  
-![1](/img/2.JPG)  
-![1](/img/4.JPG)  
-![1](/img/5.JPG)  
+![1](/img/1.png)  
+![2](/img/2.png)  
+![3](/img/3.png)  
+![4](/img/4.png)  
 
 #### 4/ Tóm tắt lại một chút
 a/ Để có thể làm việc với Eth blockchain thì mình cần phải connect vô được nó, để connect vô được nó thì mình cần connect được vô Eth protocol, khi mình đã là 1 node ở trong blockchain rồi thì mình có connect vô các node khác cũng như có thể làm các việc: mine blocks, send transaction, deploy contract.  
