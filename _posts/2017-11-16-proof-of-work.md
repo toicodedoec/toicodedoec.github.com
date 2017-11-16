@@ -1,0 +1,43 @@
+---
+layout: post
+title: Proof of Work (PoW) hoạt động như thế nào trong Ethereum?
+tags: [blockchain, pow, ethereum]
+---
+
+Dapps là viết tắt của Decentralized applications, một khái niệm đến cùng với sự ra đời của blockchain và đóng vai trò xương sống trong việc viết các ứng dụng trên nền blockchain.  
+
+Vậy decentralized app là như thế nào?  
+
+Hầu hết, nếu không muốn nói là tất cả, các ứng dụng hiện tại mà chúng ta đang xài hàng ngày, đặc biệt là các ứng dụng web, được phát triển theo mô hình centralized, có nghĩa là tất cả các client đều connect đến cùng 1 backend instance (1 backend instance thì quản lý nhiều session đại diện cho mỗi client), mô hình decentralized thì ngược lại, chắc các bạn cũng đoán ra được, mỗi client sẽ có 1 backend instance cho riêng mình, và dĩ nhiên đi kèm với 1 backend instance riêng thì cũng sẽ có 1 database instance riêng.  
+
+Nhìn hình cho dễ hình dung nha:  
+
+![Centralized Model](/img/clientservermodel.png)  
+
+Đây chính xác là những gì web developer chúng ta đang làm hàng ngày. Mô hình này có vấn đề gì không? Dĩ nhiên là không, nếu chúng ta nhớ về những khái niệm như 1-tier, 2-tier, 3-tier, n-tier...  
+
+Tác giả bài viết gốc đặt ra 1 câu hỏi là: giả sử chúng ta đang làm ăn trên eBay, chúng ta đang có rất nhiều feedback/review tốt, việc làm ăn thuận lợi, bỗng 1 ngày vì lý do nào đó, eBay nó ban acc của chúng ta, bực bội quá nên chúng ta quyết định chuyển sang bán hàng trên Amazon chẳng hạn, vậy là phải làm lại từ đầu hay sao? Tại sao chúng ta không thể mang những feedback tốt từ eBay sang Amazon, vì rõ ràng ở một góc nhìn nào đó những feedback/review tốt đó là do mồ hôi công sức của chúng ta làm nên, nó phải là data, là tài sản của chúng ta chứ T.T và cũng rất rõ ràng là hiện tại chúng ta không thể làm việc đó, data của chúng ta cũng như của tất cả eBay users khác là do eBay nắm giữ. Và Dapps xuất hiện để trám vào lỗ hổng này.
+
+![Decentralized Model](/img/dapps.png)  
+
+Dapp giải quyết vấn đề 1 cách triệt để và chân phương, mỗi ông user có 1 database riêng tại local luôn, tha hồ ban nhé =))  
+
+Dĩ nhiên là, database tại local được implement bởi blockchain mechanism, và được sync với tất cả các node khác trong chain, điều này có nghĩa là mỗi khi sử dụng app chúng ta phải download/re-sync toàn bộ blockchain để đảm bảo tính thống nhất về mặt data. Và cũng đừng lo lắng rằng chúng ta phải ngồi chờ hàng giờ để sync cái đống data này, hệ sinh thái của dapps đã phát triển đủ để giải quyết vấn đề này.  
+
+Nếu để ý thì có vẻ như __decentralized__ về mặt tier structure thì chính là __1-tier__  
+
+![1-tier](/img/1-tier.png)
+
+Vậy là thay vì phải thông qua request/response để làm việc với centralized server, thì giờ đây chúng ta làm việc trực tiếp với "local server", vậy thì chính xác blockchain ở local chứa gì trong đó?  
+
+Có 2 thứ:  
+
+1/ Database: 1 vài transactions chạy thành công trong ETH network thì sẽ được pack thành 1 vài blocks rồi 1 vài blocks đó được nhét vào trong blockchain và tạo kết nối (link) đến các block lân cận. Điều này có nghĩa là tất cả các transaction sẽ được nhìn thấy bởi tất cả mọi node trong blockchain. Và để đảm bảo là database của tất cả các node trong chain đều giống nhau và ko có 1 data bậy bạ nào được insert vào database, ETH dùng thuật toán Proof of Work (POW) để validate.  
+
+2/ Code: database chứa data, vậy thì mấy cái code thêm xóa sửa này nọ nằm ở đâu? Trong thế giới Ethereum, code của mình nằm trong mấy cái contract, thường là viết bằng Solidity, khi mà mình compile cái đám code Solidity đó thì nó sẽ output ra __Ethereum Byte Code__ và sau đó đám byte code này sẽ được đẩy vào 1 block trong blockchain.  
+
+Như vậy, blockchain nó lưu data cũng như code của chúng ta và cũng giúp chúng ta run cái code đó trong __Ethereum Virtual Machine__.  
+
+Đến đây chắc cũng đủ để chúng ta hiểu được __Dapps__ là gì và khác biệt ra sao với __Capps__ hiện tại.
+
+[Source (English)](https://medium.com/@mvmurthy/ethereum-for-web-developers-890be23d1d0c)
