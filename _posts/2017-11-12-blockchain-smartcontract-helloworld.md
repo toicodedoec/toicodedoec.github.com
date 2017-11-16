@@ -386,6 +386,10 @@ Bây giờ để kiểm tra thực sự chúng ta có nhận được token củ
 Bài viết tiếp theo chúng ta sẽ làm thử 1 ví dụ deploy cái smart contract của chúng ta lên real blockchain.  
 
 #### 5/ Tóm tắt lại một chút
-a/ Để có thể làm việc với Eth blockchain thì mình cần phải connect vô được nó, để connect vô được nó thì mình cần connect được vô Eth protocol, khi mình đã là 1 node ở trong blockchain rồi thì mình có connect vô các node khác cũng như có thể làm các việc: mine blocks, send transaction, deploy contract.  
+a/ Để có thể làm việc với ETH blockchain thì mình cần phải connect vô được nó, để connect vô được nó thì mình cần connect được vô ETH protocol, khi mình đã là 1 node ở trong blockchain rồi thì mình có connect vô các node khác cũng như có thể làm các việc: mine blocks, send transaction, deploy contract.  
+b/ Trong quá trình develop và test, thay vì phải download the entire blockchain về local, thì có thể dùng __testrpc__ để simulate 1 blockchain ở local (in-memory blockchain)
+c/ Ngôn ngữ dùng để viết smart contract phổ biến nhất hiện nay là __Solidity__, cũng là ngôn ngữ OOP, và thay vì là __class__ như trong các ngôn ngữ OOP khác thì trong __Solidity__ là __contract__
+d/ Smart contract trong ETH hiện nay thì đang theo chuẩn ERC20
+e/ Sau khi code xong smart contract rồi thì để test nó thì cần deploy nó vào blockchain (deploy có nghĩa là insert cái smart contract của chúng ta vào trong 1 block trong blockchain), và giữa hàng trăm ngàn smart contract có trong blockchain làm sao để locate đến contract của chúng ta, sẽ dựa vào address.
 
-(cont.)
+Tạm thời đang hiểu về mọi thứ như vậy :)
