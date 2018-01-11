@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Proof of Work (PoW) hoạt động như thế nào trong Ethereum?
-tags: [blockchain, pow, ethereum]
+title: Giải thích Proof of Work (PoW) trong 20 line of code?
+tags: [blockchain, pow]
 ---
 
-(cont.)
+
