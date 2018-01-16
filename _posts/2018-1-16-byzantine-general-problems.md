@@ -4,7 +4,7 @@ title: What is Byzantine Generals Problem?
 tags: [blockchain, basic, byzantine, bgp]
 ---
 
-![Blockchain](/img/blockchain-infographic.png)  
+![BGP](/img/bgp.jpg)  
 
 Take the same story of Byzantine empire. But now each commander takes 10 mins to create the message (Compose and then seal it with royal emblem). They also have to attach entire history of previous messages.
 So commander A sends message to commander B to attack and the message reaches with B after 10 mins and it says “A orders ATTACK at 4am”
